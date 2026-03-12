@@ -19,7 +19,7 @@ export default function PricingTable({ packages, title = 'Pricing & Packages' })
           subtitle="All prices in KES. Flexible payment plans available. Contact us for a custom quote."
         />
 
-        <div className={`grid grid-cols-1 md:grid-cols-${Math.min(packages.length, 3)} gap-8`}>
+        <div className={`grid grid-cols-1 gap-8 ${packages.length === 1 ? 'md:grid-cols-1 max-w-lg mx-auto' : packages.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
           {packages.map((pkg, i) => (
             <motion.div
               key={pkg.name}

@@ -67,10 +67,10 @@ export default function ContactPage() {
             We reply within 2 hours ⚡
           </div>
           <h1 className="font-heading font-black text-4xl md:text-5xl lg:text-6xl text-white mb-6">
-            Let&apos;s Build Something Amazing
+            Let&#39;s Build Something Amazing
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Ready to transform your business? Get in touch and let&apos;s discuss how we can help you grow. Karibu!
+            Ready to transform your business? Get in touch and let&#39;s discuss how we can help you grow. Karibu!
           </p>
         </div>
       </section>
