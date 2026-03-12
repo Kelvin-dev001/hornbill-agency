@@ -1,0 +1,134 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 249 250 251;
+    --foreground: 26 26 26;
+  }
+
+  .dark {
+    --background: 10 10 10;
+    --foreground: 255 255 255;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-white dark:bg-hornbill-dark text-hornbill-black dark:text-white antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  ::selection {
+    background-color: #F7941D;
+    color: white;
+  }
+
+  :focus-visible {
+    outline: 2px solid #F7941D;
+    outline-offset: 2px;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #F7941D;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E8751A;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-gradient-to-r from-hornbill-orange to-hornbill-dark-orange bg-clip-text text-transparent;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 px-4 md:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn-primary {
+    @apply bg-hornbill-orange hover:bg-hornbill-dark-orange text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-orange-500/30 active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply border-2 border-hornbill-orange text-hornbill-orange hover:bg-hornbill-orange hover:text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 active:scale-95;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 6s ease infinite;
+  }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Marquee styles */
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee-wrapper {
+  display: flex;
+  animation: marquee 25s linear infinite;
+}
+
+.marquee-wrapper:hover {
+  animation-play-state: paused;
+}
+
+/* Particle animation */
+@keyframes particle-float {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+  25% { transform: translateY(-30px) translateX(15px); opacity: 0.7; }
+  50% { transform: translateY(-15px) translateX(-10px); opacity: 0.5; }
+  75% { transform: translateY(-40px) translateX(20px); opacity: 0.4; }
+}
+
+.particle {
+  animation: particle-float linear infinite;
+}
